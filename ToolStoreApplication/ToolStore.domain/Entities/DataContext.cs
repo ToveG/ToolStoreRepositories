@@ -14,7 +14,7 @@ namespace ToolStore.domain
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<ToolType> ToolTypes { get; set; }
 
-        public DataContext() : base("ToolDb")
+        public DataContext() : base("name = Tool")
         {
                 
         }

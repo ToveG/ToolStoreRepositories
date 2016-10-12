@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolStoreApplication", "ToolStoreApplication\ToolStoreApplication.csproj", "{AEF48B71-10C6-4125-9EB4-1847C2AE8A6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolStore.domain", "ToolStore.domain\ToolStore.domain.csproj", "{FD535D49-D877-499B-85C3-008DF49A3A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolStore.businessLayer", "ToolStore.businessLayer\ToolStore.businessLayer.csproj", "{94B65D72-CBF3-463A-9523-DEF1C806378F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AEF48B71-10C6-4125-9EB4-1847C2AE8A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEF48B71-10C6-4125-9EB4-1847C2AE8A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEF48B71-10C6-4125-9EB4-1847C2AE8A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD535D49-D877-499B-85C3-008DF49A3A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD535D49-D877-499B-85C3-008DF49A3A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD535D49-D877-499B-85C3-008DF49A3A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD535D49-D877-499B-85C3-008DF49A3A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B65D72-CBF3-463A-9523-DEF1C806378F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B65D72-CBF3-463A-9523-DEF1C806378F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B65D72-CBF3-463A-9523-DEF1C806378F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B65D72-CBF3-463A-9523-DEF1C806378F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

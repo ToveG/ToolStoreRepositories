@@ -52,10 +52,17 @@
     <Compile Include="Entities\Inventory.cs" />
     <Compile Include="Entities\Tool.cs" />
     <Compile Include="Entities\DataContext.cs" />
-    <Compile Include="Entities\ToolType.cs" />
     <Compile Include="Migrations\201610120917415_test.cs" />
     <Compile Include="Migrations\201610120917415_test.Designer.cs">
       <DependentUpon>201610120917415_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610120947501_addedToolTypeEnum.cs" />
+    <Compile Include="Migrations\201610120947501_addedToolTypeEnum.Designer.cs">
+      <DependentUpon>201610120947501_addedToolTypeEnum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610130915523_modifiedToolEntity.cs" />
+    <Compile Include="Migrations\201610130915523_modifiedToolEntity.Designer.cs">
+      <DependentUpon>201610130915523_modifiedToolEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +75,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610120917415_test.resx">
       <DependentUpon>201610120917415_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610120947501_addedToolTypeEnum.resx">
+      <DependentUpon>201610120947501_addedToolTypeEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610130915523_modifiedToolEntity.resx">
+      <DependentUpon>201610130915523_modifiedToolEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

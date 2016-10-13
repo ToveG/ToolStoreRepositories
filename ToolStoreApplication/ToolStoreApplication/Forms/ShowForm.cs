@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ToolStoreApplication
 {
-    public partial class Form1 : Form
+    public partial class ShowForm : Form
     {
-        public Form1()
+        public ShowForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace ToolStoreApplication
 {
-    partial class Form1
+    partial class ShowForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ShowForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(990, 594);
+            this.Name = "ShowForm";
+            this.Text = "ShowForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

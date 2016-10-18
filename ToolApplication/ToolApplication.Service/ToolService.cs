@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ToolStore.domain;
-using ToolStore.domain.Repositories;
+using ToolApplication.Domain.Entities;
+using ToolApplication.Domain.Repositories;
 
-namespace ToolStore.businessLayer
+namespace ToolApplication.Service
 {
     public class ToolService
     {
@@ -41,9 +41,6 @@ namespace ToolStore.businessLayer
         }
 
 
- 
-    
-}
 
-   
+    }
 }

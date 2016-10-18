@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToolApplication.Domain.Entities;
 
-namespace ToolStore.domain.Repositories
+namespace ToolApplication.Domain.Repositories
 {
     public class ToolRepository
     {
@@ -33,7 +34,5 @@ namespace ToolStore.domain.Repositories
             }
             return toolList;
         }
-
-
     }
 }

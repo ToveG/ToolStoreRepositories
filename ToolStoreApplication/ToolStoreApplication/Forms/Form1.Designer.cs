@@ -33,7 +33,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.toolListView = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.toolListView);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(617, 876);
@@ -87,15 +87,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listBox1
+            // toolListView
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 29;
-            this.listBox1.Location = new System.Drawing.Point(24, 87);
-            this.listBox1.MultiColumn = true;
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(567, 352);
-            this.listBox1.TabIndex = 1;
+            this.toolListView.FormattingEnabled = true;
+            this.toolListView.ItemHeight = 29;
+            this.toolListView.Location = new System.Drawing.Point(24, 87);
+            this.toolListView.MultiColumn = true;
+            this.toolListView.Name = "toolListView";
+            this.toolListView.Size = new System.Drawing.Size(567, 352);
+            this.toolListView.TabIndex = 1;
             // 
             // Form1
             // 
@@ -117,7 +117,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox toolListView;
         private System.Windows.Forms.Label label1;
     }
 }

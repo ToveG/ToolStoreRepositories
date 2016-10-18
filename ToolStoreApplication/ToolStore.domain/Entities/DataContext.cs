@@ -18,18 +18,18 @@ namespace ToolStore.domain
         }
 
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Tool>().Property(t => t.Name).IsRequired();
-            modelBuilder.Entity<Tool>().Property(t => t.Price).IsRequired();
-            modelBuilder.Entity<Tool>().Property(t => t.Weight).IsRequired();
-            modelBuilder.Entity<Tool>().Property(t => t.ToolType).IsRequired();
-            modelBuilder.Entity<Tool>().Property(t => t.Description).IsRequired();
+    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //    {
+    //        modelBuilder.Entity<Tool>().Property(t => t.Name).IsRequired();
+    //        modelBuilder.Entity<Tool>().Property(t => t.Price).IsRequired();
+    //        modelBuilder.Entity<Tool>().Property(t => t.Weight).IsRequired();
+    //       // modelBuilder.Entity<Tool>().Property(t => t.ToolType).IsRequired();
+    //        modelBuilder.Entity<Tool>().Property(t => t.Description).IsRequired();
 
-            modelBuilder.Entity<Inventory>().Property(i => i.ailes).IsRequired();
-            modelBuilder.Entity<Inventory>().Property(i => i.Category).IsRequired();
-            modelBuilder.Entity<Inventory>().Property(i => i.shelf).IsRequired();
-        }
+    //        modelBuilder.Entity<Inventory>().Property(i => i.ailes).IsRequired();
+    //        modelBuilder.Entity<Inventory>().Property(i => i.Category).IsRequired();
+    //        modelBuilder.Entity<Inventory>().Property(i => i.shelf).IsRequired();
+    //    }
     }
 
 

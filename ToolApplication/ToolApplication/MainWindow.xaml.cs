@@ -25,6 +25,7 @@ namespace ToolApplication
     {
         private ToolService t_service = new ToolService();
         List<Tool> toolList = new List<Tool>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,23 +45,36 @@ namespace ToolApplication
         private void showBtn_Click_1(object sender, RoutedEventArgs e)
         {
             Tool item = (Tool)toolListView.SelectedItem;
-            ShowForm showForm = new ShowForm(item, t_service);
-            showForm.ShowDialog();
+            if(item == null){
+                MessageBox.Show("Du måste välja ett verktyg i listan som du vill visa.", "ToolApplication", MessageBoxButton.OK);
+            }
+            else
+            {
+                ShowForm showForm = new ShowForm(item, t_service);
+                showForm.ShowDialog();
+            }
         }
 
         private void deleteBtn_Click_1(object sender, RoutedEventArgs e)
         {
             Tool item = (Tool)toolListView.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera: " + item.Name + "?", "My App", MessageBoxButton.YesNo);
-            switch (result)
+            if(item == null)
             {
-                case MessageBoxResult.Yes:
-                    MessageBox.Show("Raderad.", "My App");
-                    t_service.DeleteTool(item);
-                    toolListView.Items.Remove(item);
-                    break;
-                case MessageBoxResult.No:
-                    break;
+                MessageBox.Show("Välj ett verktyg i lista som du vill ta bort.", "ToolApplication", MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera: " + item.Name + "?", "My App", MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        MessageBox.Show("Raderad.", "ToolApplication");
+                        t_service.DeleteTool(item);
+                        toolListView.Items.Remove(item);
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                }
             }
         }
     }

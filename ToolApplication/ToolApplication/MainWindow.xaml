@@ -12,18 +12,32 @@
             <Entities:DataContext/>
         </Grid.DataContext>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="303" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="500"/>
-        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="224" Margin="40,53,0,0" VerticalAlignment="Top" Width="157">
+        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="224" Margin="40,53,0,0" VerticalAlignment="Top" Width="331">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Produkt" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Pris" DisplayMemberBinding="{Binding Price}"/>
-                    
+                    <GridViewColumn Header="Varunr" Width="50" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Produkt" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Antal i lager" Width="70" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Width="40" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="showBtn" Click="showBtn_Click" CommandParameter="{Binding}">Visa</Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="40" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="deleteBtn" Click="deleteBtn_Click" CommandParameter="{Binding}">Radera</Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="newToolBtn" Content="Lägg till ny vara" HorizontalAlignment="Left" Margin="242,65,0,0" VerticalAlignment="Top" Width="75" Click="newToolBtn_Click"/>
-        <Button x:Name="showBtn" Content="Visa" HorizontalAlignment="Left" Margin="242,114,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="deleteBtn" Content="Ta Bort" HorizontalAlignment="Left" Margin="242,90,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="newToolBtn" Content="Lägg till ny vara" HorizontalAlignment="Left" Margin="399,54,0,0" VerticalAlignment="Top" Width="75" Click="newToolBtn_Click"/>
+        <Button x:Name="showBtn" Content="Visa" HorizontalAlignment="Left" Margin="399,104,0,0" VerticalAlignment="Top" Width="75" Click="showBtn_Click_1"/>
+        <Button x:Name="deleteBtn" Content="Ta Bort" HorizontalAlignment="Left" Margin="399,79,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

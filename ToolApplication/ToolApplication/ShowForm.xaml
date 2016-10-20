@@ -1,0 +1,36 @@
+﻿<Window x:Class="ToolApplication.ShowForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolApplication"
+        mc:Ignorable="d"
+        Title="ShowForm" Height="435.95" Width="646.256">
+    <Grid Margin="0,0,5.778,4.889">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="394" Stroke="Black" VerticalAlignment="Top" Width="626" Margin="10,2,0,0"/>
+        <GroupBox x:Name="groupBox" Header="Produktinfo" HorizontalAlignment="Left" Margin="38,10,0,0" VerticalAlignment="Top" Height="366" Width="487"/>
+        <Label x:Name="label" Content="Produktnamn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,42,0,0"/>
+        <Label x:Name="label_Copy" Content="Beskrivning" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,69,0,0"/>
+        <Label x:Name="label_Copy1" Content="Vikt" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,97,0,0"/>
+        <Label x:Name="label_Copy2" Content="Antal i lager" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,181,0,0"/>
+        <Label x:Name="label_Copy3" Content="Pris" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,209,0,0" RenderTransformOrigin="1.855,-2.129"/>
+        <Label x:Name="label_Copy4" Content="Batteritid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,153,0,0"/>
+        <Label x:Name="label_Copy5" Content="Sladdlängd" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,125,0,0"/>
+        <Label x:Name="label_Copy6" Content="Kategori" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,265,0,0"/>
+        <Label x:Name="label_Copy7" Content="Verktygstyp" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,238,0,0"/>
+        <Label x:Name="label_Copy8" Content="Hylla" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,320,0,0" RenderTransformOrigin="1.33,-1.117"/>
+        <Label x:Name="label_Copy9" Content="Gång" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,292,0,0" RenderTransformOrigin="0.548,6.797"/>
+        <TextBox x:Name="prod_name_txt" HorizontalAlignment="Left" Height="23" Margin="139,45,0,0" TextWrapping="Wrap" Text="&#x9;&#x9;" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="prod_cord_txt" HorizontalAlignment="Left" Height="23" Margin="139,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="prod_weight_txt" HorizontalAlignment="Left" Height="23" Margin="139,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="prod_dec_txt" HorizontalAlignment="Left" Height="23" Margin="139,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="prod_price_txt" HorizontalAlignment="Left" Height="23" Margin="139,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="prod_stock_txt" HorizontalAlignment="Left" Height="23" Margin="140,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="prod_battery_txt" HorizontalAlignment="Left" Height="23" Margin="139,157,0,0" TextWrapping="Wrap" Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" VerticalAlignment="Top" Width="343"/>
+        <ComboBox x:Name="prod_type_cBox" HorizontalAlignment="Left" Margin="139,242,0,0" VerticalAlignment="Top" Width="343"/>
+        <ComboBox x:Name="prod_ailes_cBox" HorizontalAlignment="Left" Margin="139,296,0,0" VerticalAlignment="Top" Width="343"/>
+        <ComboBox x:Name="prod_cat_cBox" HorizontalAlignment="Left" Margin="139,269,0,0" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="prod_shelf_txt" HorizontalAlignment="Left" Height="23" Margin="139,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
+
+    </Grid>
+</Window>

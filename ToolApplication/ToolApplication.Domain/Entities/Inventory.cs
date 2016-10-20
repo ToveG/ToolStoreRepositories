@@ -10,11 +10,10 @@ namespace ToolApplication.Domain.Entities
     {
         public int Id { get; set; }
         public Category Category { get; set; }
-        public int ailes { get; set; }
-        public int shelf { get; set; }
+        public string Ailes { get; set; }
+        public int Shelf { get; set; }
 
         public List<Tool> Tools { get; set; }
-
     }
 
     public enum Category

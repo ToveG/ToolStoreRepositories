@@ -16,6 +16,12 @@ namespace ToolApplication.Domain.Repositories
             dbContext = db;
         }
 
+        public void DeleteTool(Tool tool)
+        {
+            dbContext.Tools.Remove(tool);
+            dbContext.SaveChanges();
+        }
+
         public List<Tool> toolList = new List<Tool>();
 
         public void AddTool(Tool tool)

@@ -40,5 +40,22 @@ namespace ToolApplication
             AddToolWindow addTool = new AddToolWindow(t_service);
             addTool.Show(); 
         }
+
+        private void showBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Tool item = (Tool)(sender as Button).DataContext;
+            ShowForm showForm = new ShowForm(item);
+            showForm.Show();
+        }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Tool item = (Tool)(sender as Button).DataContext;
+            t_service.DeleteTool(item);
+        }
+
+        private void showBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

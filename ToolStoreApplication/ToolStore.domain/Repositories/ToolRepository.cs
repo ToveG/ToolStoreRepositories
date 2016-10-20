@@ -23,7 +23,7 @@ namespace ToolStore.domain.Repositories
             dbContext.SaveChanges();
         }
 
-        public List<Tool> GetTools()
+        public List<Tool> GetTools  ()
         {
             var tool = from t in dbContext.Tools
                        select t;

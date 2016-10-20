@@ -46,6 +46,10 @@ namespace ToolApplication.Domain.Repositories
             }
           }
 
+        public void UpdateTool()
+        {
+            dbContext.SaveChanges();
+        }
 
         public void AddTool(Tool tool)
         {

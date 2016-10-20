@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,25 +35,11 @@ namespace ToolApplication
             }
         }
 
-
         private void newToolBtn_Click(object sender, RoutedEventArgs e)
         {
             AddToolWindow addTool = new AddToolWindow(t_service);
             addTool.ShowDialog(); 
         }
-
-        //private void showBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Tool item = (Tool)(sender as Button).DataContext;
-        //    ShowForm showForm = new ShowForm(item, t_service);
-        //    showForm.ShowDialog();
-        //}
-
-        //private void deleteBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Tool item = (Tool)(sender as Button).DataContext;
-        //    t_service.DeleteTool(item);
-        //}
 
         private void showBtn_Click_1(object sender, RoutedEventArgs e)
         {
@@ -63,11 +50,18 @@ namespace ToolApplication
 
         private void deleteBtn_Click_1(object sender, RoutedEventArgs e)
         {
-         //MessageBoxResult result = MessageBox.Show("Would you like to greet the world with a \"H//ello, world\"?", "My App", MessageBoxButton.YesNoCancel);
-            //  MessageBox.Show("Är du säker på att du vill radera produkten?", "Question",
-            //   MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            //    Tool item = (Tool)toolListView.SelectedItem;
-            //    t_service.DeleteTool(item);
+            Tool item = (Tool)toolListView.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera: " + item.Name + "?", "My App", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    MessageBox.Show("Raderad.", "My App");
+                    t_service.DeleteTool(item);
+                    toolListView.Items.Remove(item);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
         }
     }
 }

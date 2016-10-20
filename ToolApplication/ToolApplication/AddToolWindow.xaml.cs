@@ -76,7 +76,9 @@ namespace ToolApplication
             tool_service.AddInventory(_inventory);
             tool_service.AddTool(name, desc, weight, price, t_type, _inventory, stock, bat_Time, cord );
 
+
             Close();
+
         }
     }
 }

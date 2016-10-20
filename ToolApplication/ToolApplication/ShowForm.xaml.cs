@@ -29,6 +29,7 @@ namespace ToolApplication
             InitializeComponent();
             _tool = tool;
             tService = t_service;
+            
 
             toolList = t_service.Get_Tools();
             foreach (var item in toolList.GroupBy(t => t.ToolType))
@@ -57,23 +58,8 @@ namespace ToolApplication
             prod_cat_cBox.SelectedItem = _tool.Inventory.Category;
             prod_ailes_cBox.SelectedItem = _tool.Inventory.Ailes;
             prod_type_cBox.SelectedItem = _tool.ToolType;
-            if (_tool.ToolType == ToolType.Strömverktyg)
-            {
-                prod_battery_txt.Visibility = Visibility.Hidden;
-                battery_label.Visibility = Visibility.Hidden;
-            }
-            else if(_tool.ToolType == ToolType.Batteriverktyg)
-            {
-                prod_cord_txt.Visibility = Visibility.Hidden;
-                cord_label.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                prod_battery_txt.Visibility = Visibility.Hidden;
-                battery_label.Visibility = Visibility.Hidden;
-                prod_cord_txt.Visibility = Visibility.Hidden;
-                cord_label.Visibility = Visibility.Hidden;
-            }
+            var tooltype = _tool.ToolType.ToString();
+            setVisibility(tooltype);
         }
 
         private void show_simular_tools_btn_Click(object sender, RoutedEventArgs e)
@@ -82,5 +68,67 @@ namespace ToolApplication
             ToolForm tForm = new ToolForm(category);
             tForm.ShowDialog();
         }
+
+        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var _name = prod_name_txt.Text;
+            var _desc = prod_dec_txt.Text;
+            var _price = prod_price_txt.Text;
+            var _battery = prod_battery_txt.Text;
+            var _shelf = prod_shelf_txt.Text;
+            var _stock = prod_stock_txt.Text;
+            var _weight = prod_weight_txt.Text;
+            var _cord = prod_cord_txt.Text;
+            Category _category = (Category)prod_cat_cBox.SelectedItem;
+            var _ailes = prod_ailes_cBox.SelectedItem.ToString();
+            ToolType _type = (ToolType)prod_type_cBox.SelectedItem;
+
+            if(_type ==  ToolType.Batteriverktyg)
+            {
+                _cord = "0";
+            }
+            else if(_type == ToolType.Strömverktyg)
+            {
+                _battery = "0";
+            }
+
+            tService.Update(_tool, _type, _category, _name, _desc, _weight, _price, _stock, _battery, _cord,  _shelf, _ailes);
+
+            MessageBox.Show("Sparad.");
+
+        }
+
+        private void prod_type_cBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string type = prod_type_cBox.SelectedValue.ToString();
+            setVisibility(type);
+        }
+
+         private void setVisibility(string typ)
+        {
+            if(typ == "Verktyg")
+            {
+                prod_battery_txt.Visibility = Visibility.Hidden;
+                battery_label.Visibility = Visibility.Hidden;
+                prod_cord_txt.Visibility = Visibility.Hidden;
+                cord_label.Visibility = Visibility.Hidden;
+            }
+            else if(typ == "Strömverktyg")
+            {
+                prod_cord_txt.Visibility = Visibility.Visible;
+                cord_label.Visibility = Visibility.Visible;
+                prod_battery_txt.Visibility = Visibility.Hidden;
+                battery_label.Visibility = Visibility.Hidden;
+            }
+            else if(typ == "Batteriverktyg")
+            {
+                prod_cord_txt.Visibility = Visibility.Hidden;
+                cord_label.Visibility = Visibility.Hidden;
+                prod_battery_txt.Visibility = Visibility.Visible;
+                battery_label.Visibility = Visibility.Visible;
+
+            }
+        }
+
     }
 }

@@ -5,29 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using ToolApplication.Domain.Entities;
 
+
 namespace ToolApplication.Domain.Repositories
 {
     public class ToolRepository
     {
         public readonly DataContext dbContext;
+        public List<Tool> toolList = new List<Tool>();
 
         public ToolRepository(DataContext db)
         {
             dbContext = db;
         }
 
-        public void DeleteTool(Tool tool)
+        public List<Tool> Get_SpecificTools(Category category)
         {
-            dbContext.Tools.Remove(tool);
-            dbContext.SaveChanges();
-        }
-
-        public List<Tool> toolList = new List<Tool>();
-
-        public void AddTool(Tool tool)
-        {
-            dbContext.Tools.Add(tool);
-            dbContext.SaveChanges();
+            List<Tool> tools = dbContext.Tools.Where(c => c.Inventory.Category == category).ToList();
+            return tools;
         }
 
         public List<Tool> GetTools()
@@ -40,5 +34,24 @@ namespace ToolApplication.Domain.Repositories
             }
             return toolList;
         }
-    }
+
+        public void DeleteTool(Tool tool)
+        {
+            try{
+                dbContext.Tools.Remove(tool);
+                dbContext.SaveChanges();
+            }
+            catch(Exception e)
+            {
+            }
+          }
+
+
+        public void AddTool(Tool tool)
+        {
+            dbContext.Tools.Add(tool);
+            dbContext.SaveChanges();
+        }
+
+            }
 }

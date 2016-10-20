@@ -67,7 +67,7 @@
     <Compile Include="Repositories\ToolRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Migrations\App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

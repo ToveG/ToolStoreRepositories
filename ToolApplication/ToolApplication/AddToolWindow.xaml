@@ -41,7 +41,7 @@
         <Label x:Name="label2" Content="Sladdlängd" HorizontalAlignment="Left" Margin="324,225,0,0" VerticalAlignment="Top"
                Visibility="{Binding IsChecked,ElementName=powerRadio,Converter={StaticResource b2v}}"/>
         <Label x:Name="label3" Content="Kategori" HorizontalAlignment="Left" Margin="13,225,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="categoryComboBox" HorizontalAlignment="Left" Margin="13,252,0,0" VerticalAlignment="Top" Width="120"
+        <ComboBox x:Name="categoryComboBox" HorizontalAlignment="Left" Margin="13,251,0,0" VerticalAlignment="Top" Width="120"
                   ItemsSource="{Binding Source={StaticResource dataFromEnum}}"/>
         <Label x:Name="label4" Content="Hyllplats" HorizontalAlignment="Left" Margin="165,225,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label5" Content="Gång" HorizontalAlignment="Left" Margin="165,171,0,0" VerticalAlignment="Top"/>

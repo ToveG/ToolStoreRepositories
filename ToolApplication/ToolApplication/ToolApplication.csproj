@@ -67,6 +67,9 @@
     <Compile Include="ShowForm.xaml.cs">
       <DependentUpon>ShowForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm.xaml.cs">
+      <DependentUpon>ToolForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Validation.cs" />
     <Page Include="AddToolWindow.xaml">
       <SubType>Designer</SubType>
@@ -88,6 +91,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ShowForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

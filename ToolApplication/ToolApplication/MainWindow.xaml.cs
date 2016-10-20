@@ -38,24 +38,36 @@ namespace ToolApplication
         private void newToolBtn_Click(object sender, RoutedEventArgs e)
         {
             AddToolWindow addTool = new AddToolWindow(t_service);
-            addTool.Show(); 
+            addTool.ShowDialog(); 
         }
 
-        private void showBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Tool item = (Tool)(sender as Button).DataContext;
-            ShowForm showForm = new ShowForm(item);
-            showForm.Show();
-        }
+        //private void showBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tool item = (Tool)(sender as Button).DataContext;
+        //    ShowForm showForm = new ShowForm(item, t_service);
+        //    showForm.ShowDialog();
+        //}
 
-        private void deleteBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Tool item = (Tool)(sender as Button).DataContext;
-            t_service.DeleteTool(item);
-        }
+        //private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tool item = (Tool)(sender as Button).DataContext;
+        //    t_service.DeleteTool(item);
+        //}
 
         private void showBtn_Click_1(object sender, RoutedEventArgs e)
         {
+            Tool item = (Tool)toolListView.SelectedItem;
+            ShowForm showForm = new ShowForm(item, t_service);
+            showForm.ShowDialog();
+        }
+
+        private void deleteBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+         //MessageBoxResult result = MessageBox.Show("Would you like to greet the world with a \"H//ello, world\"?", "My App", MessageBoxButton.YesNoCancel);
+            //  MessageBox.Show("Är du säker på att du vill radera produkten?", "Question",
+            //   MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            //    Tool item = (Tool)toolListView.SelectedItem;
+            //    t_service.DeleteTool(item);
         }
     }
 }

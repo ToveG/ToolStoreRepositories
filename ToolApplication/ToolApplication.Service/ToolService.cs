@@ -28,6 +28,12 @@ namespace ToolApplication.Service
             inventory_rep = new InventoryRepositiory(dbContext);
         }
 
+        public List<Tool> Get_SpecificTools(Category category)
+        {
+            _toolList = tool_rep.Get_SpecificTools(category);
+            return _toolList;
+        }
+
         public void AddTool(string name, string description, string weight, string price, ToolType t_Type, Inventory inventory, string stock, string battery, string cord)
         {
             if (decimal.TryParse(weight, out w))

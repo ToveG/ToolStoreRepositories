@@ -61,6 +61,14 @@
     <Compile Include="Migrations\201610190826216_updatedInventory.Designer.cs">
       <DependentUpon>201610190826216_updatedInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610240844589_addedAnnotation.cs" />
+    <Compile Include="Migrations\201610240844589_addedAnnotation.Designer.cs">
+      <DependentUpon>201610240844589_addedAnnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610241006264_add.cs" />
+    <Compile Include="Migrations\201610241006264_add.Designer.cs">
+      <DependentUpon>201610241006264_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\InventoryRepositiory.cs" />
@@ -76,6 +84,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610190826216_updatedInventory.resx">
       <DependentUpon>201610190826216_updatedInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610240844589_addedAnnotation.resx">
+      <DependentUpon>201610240844589_addedAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610241006264_add.resx">
+      <DependentUpon>201610241006264_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

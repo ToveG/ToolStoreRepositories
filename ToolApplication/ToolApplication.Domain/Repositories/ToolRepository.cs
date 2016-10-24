@@ -53,8 +53,16 @@ namespace ToolApplication.Domain.Repositories
 
         public void AddTool(Tool tool)
         {
-            dbContext.Tools.Add(tool);
-            dbContext.SaveChanges();
+            try
+            {
+                dbContext.Tools.Add(tool);
+                dbContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+            
         }
 
             }

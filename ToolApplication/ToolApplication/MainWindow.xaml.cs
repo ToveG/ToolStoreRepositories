@@ -25,12 +25,18 @@ namespace ToolApplication
     {
         private ToolService t_service = new ToolService();
         List<Tool> toolList = new List<Tool>();
-
+        
         public MainWindow()
         {
             InitializeComponent();
+            PopulateListview();
+            
+        }
+
+        private void PopulateListview()
+        {
             toolList = t_service.Get_Tools();
-            foreach(var t in toolList)
+            foreach (var t in toolList)
             {
                 toolListView.Items.Add(t);
             }
@@ -60,15 +66,14 @@ namespace ToolApplication
             Tool item = (Tool)toolListView.SelectedItem;
             if(item == null)
             {
-                MessageBox.Show("Välj ett verktyg i lista som du vill ta bort.", "ToolApplication", MessageBoxButton.OK);
+                MessageBox.Show("Välj ett verktyg i listan som du vill ta bort.", "ToolApplication", MessageBoxButton.OK);
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera: " + item.Name + "?", "My App", MessageBoxButton.YesNo);
+                MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera: " + item.Name + "?", "Tool Application", MessageBoxButton.YesNo);
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        MessageBox.Show("Raderad.", "ToolApplication");
                         t_service.DeleteTool(item);
                         toolListView.Items.Remove(item);
                         break;
@@ -76,6 +81,12 @@ namespace ToolApplication
                         break;
                 }
             }
+        }
+
+        public void FetchTool(Tool _tool)
+        {
+            toolListView.Items.Add(_tool);
+            toolListView.Items.Refresh();
         }
     }
 }

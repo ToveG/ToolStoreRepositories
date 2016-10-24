@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ToolApplication.Domain.Entities;assembly=ToolApplication.Domain"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="AddToolWindow" Height="405.522" Width="494.845">
+        Title="AddToolWindow" Height="597.966" Width="494.845">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="b2v" />
         <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
@@ -16,40 +16,40 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
-    <Grid Margin="0,0,5.222,4.222">
-        <RadioButton x:Name="toolRadio" Content="Verktyg" HorizontalAlignment="Left" Margin="300,99,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}"/>
-        <RadioButton x:Name="batteryRadio" Content="Batteriverktyg" HorizontalAlignment="Left" Margin="300,139,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}"/>
-        <RadioButton x:Name="powerRadio" Content="Strömverktyg" HorizontalAlignment="Left" Margin="300,119,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}"/>
-        <GroupBox x:Name="groupBox" Header="GroupBox" HorizontalAlignment="Left" Margin="290,76,0,0" VerticalAlignment="Top" Width="164" Height="90" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="toolWeightTxt" HorizontalAlignment="Left" Height="23" Margin="13,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="toolPriceTxt" HorizontalAlignment="Left" Height="21" Margin="165,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="inventoryShelfTxt" HorizontalAlignment="Left" Height="23" Margin="165,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    <Grid Margin="0,34,5.222,4.222">
+        <RadioButton x:Name="toolRadio" Content="Verktyg" HorizontalAlignment="Left" Margin="300,102,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}"/>
+        <RadioButton x:Name="batteryRadio" Content="Batteriverktyg" HorizontalAlignment="Left" Margin="300,142,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}"/>
+        <RadioButton x:Name="powerRadio" Content="Strömverktyg" HorizontalAlignment="Left" Margin="300,122,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}"/>
+        <GroupBox x:Name="Verktygstyp" Header="Verktygstyp" HorizontalAlignment="Left" Margin="290,80,0,0" VerticalAlignment="Top" Width="130" Height="86" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="toolWeightTxt" HorizontalAlignment="Left" Height="23" Margin="74,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
+        <TextBox x:Name="toolPriceTxt" HorizontalAlignment="Left" Height="21" Margin="74,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
+        <TextBox x:Name="inventoryShelfTxt" HorizontalAlignment="Left" Height="23" Margin="74,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
         <TextBox x:Name="toolCordTxt" HorizontalAlignment="Left" Height="23" Margin="323,251,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"
                  Visibility="{Binding IsChecked,ElementName=powerRadio,Converter={StaticResource b2v}}"/>
-        <TextBox x:Name="toolNameTxt" HorizontalAlignment="Left" Height="22" Margin="13,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="441"/>
+        <TextBox x:Name="toolNameTxt" HorizontalAlignment="Left" Height="22" Margin="13,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="407"/>
         <TextBox x:Name="toolBattTxt" HorizontalAlignment="Left" Height="23" Margin="323,197,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"
             Visibility="{Binding IsChecked,ElementName=batteryRadio,Converter={StaticResource b2v}}"/>
 
-        <Button x:Name="add_btn" Content="Lägg till" HorizontalAlignment="Left" Margin="324,310,0,0" VerticalAlignment="Top" Width="119" Click="add_btn_Click"/>
+        <Button x:Name="add_btn" Content="Lägg till" HorizontalAlignment="Left" Margin="166,359,0,0" VerticalAlignment="Top" Width="119" Click="add_btn_Click"/>
         <TextBox x:Name="toolDescTxt" HorizontalAlignment="Left" Height="77" Margin="13,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
         <Label x:Name="label" Content="Produktnamn" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Produktbeskrivning" HorizontalAlignment="Left" Margin="13,63,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Pris" HorizontalAlignment="Left" Margin="165,279,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy2" Content="Vikt" HorizontalAlignment="Left" Margin="13,171,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Batteritid" HorizontalAlignment="Left" Margin="323,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"
+        <Label x:Name="label_Copy1" Content="Pris" HorizontalAlignment="Left" Margin="13,328,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="Vikt (kg)" HorizontalAlignment="Left" Margin="14,171,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Batteritid (h)" HorizontalAlignment="Left" Margin="323,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"
             Visibility="{Binding IsChecked,ElementName=batteryRadio,Converter={StaticResource b2v}}"/>
-        <Label x:Name="label2" Content="Sladdlängd" HorizontalAlignment="Left" Margin="324,225,0,0" VerticalAlignment="Top"
+        <Label x:Name="label2" Content="Sladdlängd (m)" HorizontalAlignment="Left" Margin="324,225,0,0" VerticalAlignment="Top"
                Visibility="{Binding IsChecked,ElementName=powerRadio,Converter={StaticResource b2v}}"/>
-        <Label x:Name="label3" Content="Kategori" HorizontalAlignment="Left" Margin="13,225,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="categoryComboBox" HorizontalAlignment="Left" Margin="13,251,0,0" VerticalAlignment="Top" Width="120"
+        <Label x:Name="label3" Content="Kategori" HorizontalAlignment="Left" Margin="14,207,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="categoryComboBox" HorizontalAlignment="Left" Margin="74,211,0,0" VerticalAlignment="Top" Width="211"
                   ItemsSource="{Binding Source={StaticResource dataFromEnum}}"/>
-        <Label x:Name="label4" Content="Hyllplats" HorizontalAlignment="Left" Margin="165,225,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="Gång" HorizontalAlignment="Left" Margin="165,171,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="inventoryAisleBox" HorizontalAlignment="Left" Margin="165,197,0,0" VerticalAlignment="Top" Width="120"
+        <Label x:Name="label4" Content="Hyllplats" HorizontalAlignment="Left" Margin="14,269,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Gång" HorizontalAlignment="Left" Margin="14,238,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="inventoryAisleBox" HorizontalAlignment="Left" Margin="74,242,0,0" VerticalAlignment="Top" Width="211"
                       ItemsSource="{Binding}"
                   />
-        <TextBox x:Name="productStockText" HorizontalAlignment="Left" Height="23" Margin="13,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label_Copy3" Content="Antal i Lager" HorizontalAlignment="Left" Margin="14,279,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.11,0.569"/>
+        <TextBox x:Name="productStockText" HorizontalAlignment="Left" Height="23" Margin="99,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <Label x:Name="label_Copy3" Content="Antal i Lager" HorizontalAlignment="Left" Margin="14,297,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.11,0.569"/>
 
     </Grid>
 </Window>

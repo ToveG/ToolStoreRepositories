@@ -16,12 +16,6 @@ namespace ToolApplication.Service
         List<Tool> _toolList = new List<Tool>();
         List<Inventory> _inventoryList = new List<Inventory>();
 
-        decimal p;
-        decimal w;
-        decimal c;
-        decimal b; 
-        int s;
-
        
 
         public ToolService()
@@ -30,18 +24,18 @@ namespace ToolApplication.Service
             inventory_rep = new InventoryRepositiory(dbContext);
         }
 
-        public void Update(Tool tool, ToolType t_Type, Category category, string name, string description, string weight, string price, string stock, string battery, string cord, string shelf, string ailes)
+        public void Update(Tool tool, ToolType t_Type, Category category, string name, string description, decimal weight, decimal price, int stock, decimal battery, decimal cord, int shelf, string ailes)
         {
             tool.ToolType = t_Type;
             tool.Name = name;
             tool.Description = description;
-            tool.Weight = Decimal.Parse(weight);
-            tool.Price = Decimal.Parse(price);
-            tool.Stock = Int32.Parse(stock);
-            tool.BatteryTime = Decimal.Parse(battery);
-            tool.WireLength = Decimal.Parse(cord);
+            tool.Weight = weight;
+            tool.Price = price;
+            tool.Stock = stock;
+            tool.BatteryTime = battery;
+            tool.WireLength = cord;
             tool.Inventory.Ailes = ailes;
-            tool.Inventory.Shelf = Int32.Parse(shelf);
+            tool.Inventory.Shelf = shelf;
             tool.Inventory.Category = category;
             tool_rep.UpdateTool();
         }
@@ -57,35 +51,11 @@ namespace ToolApplication.Service
 
         }
 
-        public void AddTool(string name, string description, string weight, string price, ToolType t_Type, Inventory inventory, string stock, string battery, string cord)
+        public Tool AddTool(string name, string description, decimal weight, decimal price, ToolType t_Type, Inventory inventory, int stock, decimal battery, decimal cord)
         {
-            if (decimal.TryParse(weight, out w))
-            {
-                if (decimal.TryParse(price, out p))
-                {
-                    if(int.TryParse(stock, out s))
-                    {
-                        if (decimal.TryParse(battery, out b))
-                        {
-                            Tool _tool = new Tool { Price = p, Description = description, Name = name, Weight = w, ToolType = t_Type, Stock = s, Inventory = inventory, BatteryTime = b, WireLength = c };
-                            tool_rep.AddTool(_tool);
-                        }
-                        else if(decimal.TryParse(cord, out c))
-                        {
-                            Tool _tool = new Tool { Price = p, Description = description, Name = name, Weight = w, ToolType = t_Type, Stock = s, Inventory = inventory, BatteryTime = b, WireLength = c };
-                            tool_rep.AddTool(_tool);
-
-                        }
-                        else
-                        {
-                            Tool _tool = new Tool { Price = p, Description = description, Name = name, Weight = w, ToolType = t_Type, Stock = s, Inventory = inventory, BatteryTime = b, WireLength = c };
-                            tool_rep.AddTool(_tool);
-                        }
-
-                    
-                    }
-                }
-            }
+            Tool _tool = new Tool { Price = price, Description = description, Name = name, Weight = weight, ToolType = t_Type, Stock = stock, Inventory = inventory, BatteryTime = battery, WireLength = cord };
+            tool_rep.AddTool(_tool);
+            return _tool;
         }
 
         public void AddInventory(Inventory inventory)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToolApplication"
         mc:Ignorable="d"
-        Title="ShowForm" Height="494" Width="532">
+        Title="ShowForm" Height="494" Width="532" ResizeMode="NoResize">
 
     <Grid Margin="0,0,5.778,4.889">
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="450" Stroke="Black" VerticalAlignment="Top" Width="503" Margin="10,2,0,0" RenderTransformOrigin="0.5,0.5">

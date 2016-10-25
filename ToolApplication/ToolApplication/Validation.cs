@@ -17,19 +17,21 @@ namespace ToolApplication
         {
             if (int.TryParse(_int, out result))
             {
-                return result;
+                    return result;
             }
             else throw new Exception();
         }
+        //göra test på?
 
         public decimal ValidateDecimal(string _decimal)
         {
             if (decimal.TryParse(_decimal, out _result))
             {
-                return _result;
+                    return _result;
             }
             else throw new Exception();
         }
+
 
         public bool ValidateToolType(ToolType toolType)
         {
@@ -41,35 +43,23 @@ namespace ToolApplication
                 return true;
         }
 
-        //public void AddTool(string name, string description, string weight, string price, ToolType t_Type, Inventory inventory, string stock, string battery, string cord)
-        //{
-        //    if (decimal.TryParse(weight, out w))
-        //    {
-        //        if (decimal.TryParse(price, out p))
-        //        {
-        //            if (int.TryParse(stock, out s))
-        //            {
-        //                if (decimal.TryParse(battery, out b))
-        //                {
-        //                    Tool _tool = new Tool { Price = p, Description = description, Name = name, Weight = w, ToolType = t_Type, Stock = s, Inventory = inventory, BatteryTime = b, WireLength = c };
-        //                    tool_rep.AddTool(_tool);
-        //                }
-        //                else if (decimal.TryParse(cord, out c))
-        //                {
-        //                    Tool _tool = new Tool { Price = p, Description = description, Name = name, Weight = w, ToolType = t_Type, Stock = s, Inventory = inventory, BatteryTime = b, WireLength = c };
-        //                    tool_rep.AddTool(_tool);
+        public int isIntNegative(int number)
+        {
+            if (number >= 0)
+            {
+                return number;
+            }
+            else throw new Exception();
+        }
 
-        //                }
-        //                else
-        //                {
-        //                    Tool _tool = new Tool { Price = p, Description = description, Name = name, Weight = w, ToolType = t_Type, Stock = s, Inventory = inventory, BatteryTime = b, WireLength = c };
-        //                    tool_rep.AddTool(_tool);
-        //                }
-
-
-        //            }
-        //        }
-        //    }
+        public decimal isDecimalNegative(decimal number)
+        {
+            if (number >= 0)
+            {
+                return number;
+            }
+            else throw new Exception();
+        }
 
 
     }

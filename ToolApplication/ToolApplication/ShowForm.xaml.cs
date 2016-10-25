@@ -38,37 +38,6 @@ namespace ToolApplication
             _tool = tool;
             tService = t_service;
 
-
-            //toolList = t_service.Get_Tools();
-            //foreach (var item in toolList.GroupBy(t => t.ToolType))
-            //{
-            //    prod_type_cBox.Items.Add(item.Key);
-            //}
-            //List<Inventory> invList = t_service.GetInventories();
-
-            //foreach (var item in invList.GroupBy(i => i.Category))
-            //{
-            //    prod_cat_cBox.Items.Add(item.Key);
-            //}
-            //foreach (var item in invList.GroupBy(i => i.Ailes))
-            //{
-            //    prod_ailes_cBox.Items.Add(item.Key);
-            //}
-
-
-            //prod_name_txt.Text = _tool.Name;
-            //prod_dec_txt.Text = _tool.Description;
-            //prod_price_txt.Text = _tool.Price.ToString();
-            //prod_battery_txt.Text = _tool.BatteryTime.ToString();
-            //prod_shelf_txt.Text = _tool.Inventory.Shelf.ToString();
-            //prod_stock_txt.Text = _tool.Stock.ToString();
-            //prod_weight_txt.Text = _tool.Weight.ToString();
-            //prod_cord_txt.Text = _tool.WireLength.ToString();
-            //prod_cat_cBox.SelectedItem = _tool.Inventory.Category;
-            //prod_ailes_cBox.SelectedItem = _tool.Inventory.Ailes;
-            //prod_type_cBox.SelectedItem = _tool.ToolType;
-            //var tooltype = _tool.ToolType.ToString();
-            //setVisibility(tooltype);
             loadData();
             textChanged = false;
     }
@@ -105,7 +74,6 @@ namespace ToolApplication
             prod_type_cBox.SelectedItem = _tool.ToolType;
             var tooltype = _tool.ToolType.ToString();
             setVisibility(tooltype);
-
         }
 
 
@@ -130,33 +98,39 @@ namespace ToolApplication
             Category _category = (Category)prod_cat_cBox.SelectedItem;
             var _ailes = prod_ailes_cBox.SelectedItem.ToString();
             ToolType _type = (ToolType)prod_type_cBox.SelectedItem;
-            try
-            {
-                _shelf = val.ValidateInt(shelf);
-                _cord = val.ValidateDecimal(cord);
-                _weight = val.ValidateDecimal(weight);
-                _price = val.ValidateDecimal(price);
-                _battery = val.ValidateDecimal(battery);
-                _stock = val.ValidateInt(stock);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ett fält är felaktigt inmatat");
-            }
 
-
-            if (_type ==  ToolType.Batteriverktyg)
+            if (_type == ToolType.Batteriverktyg)
             {
                 cord = "0";
             }
-            else if(_type == ToolType.Strömverktyg)
+            else if (_type == ToolType.Strömverktyg)
             {
                 battery = "0";
             }
 
-            tService.Update(_tool, _type, _category, _name, _desc, _weight, _price, _stock, _battery, _cord,  _shelf, _ailes);
+            try
+            {
+                int _shelf_ = val.ValidateInt(shelf);
+                _shelf = val.isIntNegative(_shelf_);
+                decimal _cord_ = val.ValidateDecimal(cord);
+                _cord = val.isDecimalNegative(_cord_);
+                decimal _weight_ = val.ValidateDecimal(weight);
+                _weight = val.isDecimalNegative(_weight_);
+                decimal _price_ = val.ValidateDecimal(price);
+                _price = val.isDecimalNegative(_price_);
+                decimal _battery_ = val.ValidateDecimal(battery);
+                _battery = val.isDecimalNegative(_battery_);
+                int _stock_ = val.ValidateInt(stock);
+                _stock = val.isIntNegative(_stock_);
+                tService.Update(_tool, _type, _category, _name, _desc, _weight, _price, _stock, _battery, _cord, _shelf, _ailes);
 
-            Close();
+                Close();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ett fält är felaktigt inmatat. Observera att inga tal får vara negativa.");
+            }
     }
 
         public void prod_name_txt_TextChanged(object sender, TextChangedEventArgs e)

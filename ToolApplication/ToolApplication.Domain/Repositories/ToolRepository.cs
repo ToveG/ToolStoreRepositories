@@ -20,8 +20,8 @@ namespace ToolApplication.Domain.Repositories
 
         public List<Tool> Get_SpecificTools(Category category)
         {
-            List<Tool> tools = dbContext.Tools.Where(c => c.Inventory.Category == category).ToList();
-            return tools;
+                List<Tool> tools = dbContext.Tools.Where(c => c.Inventory.Category == category).ToList();
+                return tools;
         }
 
         public List<Tool> GetTools()
@@ -41,7 +41,7 @@ namespace ToolApplication.Domain.Repositories
                 dbContext.Tools.Remove(tool);
                 dbContext.SaveChanges();
             }
-            catch(Exception e)
+            catch(Exception)
             {
             }
           }

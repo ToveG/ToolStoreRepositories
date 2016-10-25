@@ -44,7 +44,7 @@ namespace ToolApplication
 
         private void newToolBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddToolWindow addTool = new AddToolWindow(t_service);
+            AddToolWindow addTool = new AddToolWindow(t_service, this);
             addTool.ShowDialog(); 
         }
 

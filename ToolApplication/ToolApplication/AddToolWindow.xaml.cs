@@ -26,6 +26,7 @@ namespace ToolApplication
         ToolService tool_service;
         ToolType t_type;
         Validation val = new Validation();
+        MainWindow mainWindow;
         decimal _weight;
         decimal _battery;
         decimal _cord;
@@ -33,12 +34,12 @@ namespace ToolApplication
         int _stock;
         int _shelf;
        
-        public AddToolWindow(ToolService t_service)
+        public AddToolWindow(ToolService t_service, MainWindow mw)
         {
             InitializeComponent();
             this.tool_service = t_service;
+            this.mainWindow = mw;
             inventoryList = tool_service.GetInventories();
-            MainWindow mw = new MainWindow();
 
             foreach(var item in inventoryList.GroupBy(a => a.Ailes))
             {
@@ -84,18 +85,24 @@ namespace ToolApplication
 
                     try
                     {
-                        _shelf = val.ValidateInt(shelf);
-                        _stock = val.ValidateInt(stock);
-                        _weight = val.ValidateDecimal(weight);
-                        _battery = val.ValidateDecimal(bat_Time);
-                        _cord = val.ValidateDecimal(cord);
-                        _price = val.ValidateInt(price);
+                        var _shelf_ = val.ValidateInt(shelf);
+                        _shelf = val.isIntNegative(_shelf_);
+                        var _stock_ = val.ValidateInt(stock);
+                        _stock = val.isIntNegative(_stock_);
+                        var _weight_ = val.ValidateDecimal(weight);
+                        _weight = val.isDecimalNegative(_weight_);
+                        var _battery_ = val.ValidateDecimal(bat_Time);
+                        _battery = val.isDecimalNegative(_battery_);
+                        var _cord_ = val.ValidateDecimal(cord);
+                        _cord = val.isDecimalNegative(_cord_);
+                        var _price_ = val.ValidateInt(price);
+                       _price = val.isDecimalNegative(_price_);
 
                         Inventory _inventory = new Inventory { Category = category, Ailes = ailes, Shelf = _shelf };
                         tool_service.AddInventory(_inventory);
                         Tool tool = tool_service.AddTool(name, desc, _weight, _price, t_type, _inventory, _stock, _battery, _cord);
-                        MainWindow mw = new MainWindow();
-                        mw.FetchTool(tool);
+                        
+                        mainWindow.FetchTool(tool);
                         Close();
                     }
                     catch (Exception)

@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:ToolApplication"
         xmlns:Entities="clr-namespace:ToolApplication.Domain.Entities;assembly=ToolApplication.Domain" x:Class="ToolApplication.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="439.444" Width="748.81">
+        Title="MainWindow" Height="520" Width="420.477" ResizeMode="NoResize">
     <Window.Resources>
         <Color x:Key="Color1">#FF626060</Color>
     </Window.Resources>
-    <Grid Margin="0,0,5.444,1.444">
+    <Grid Margin="0,0,6.222,1.444">
         <Grid.DataContext>
             <Entities:DataContext/>
         </Grid.DataContext>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="391" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="719"/>
-        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="326" Margin="40,53,0,0" VerticalAlignment="Top" Width="492">
+        <Rectangle Fill="#FF363434" Height="490" Margin="0,0,0,-0.333" Stroke="Black" VerticalAlignment="Top"/>
+        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="376" Margin="40,53,0,0" VerticalAlignment="Top" Width="329">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Varunr" Width="50" DisplayMemberBinding="{Binding Id}"/>
@@ -24,31 +24,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="newToolBtn" Content="Lägg till ny vara" HorizontalAlignment="Left" Margin="537,54,0,0" VerticalAlignment="Top" Width="161" Click="newToolBtn_Click" Height="43" FontFamily="Gill Sans MT Condensed" FontSize="21.333" Foreground="#FFFEFBFB">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF626060" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="showBtn" Content="Visa" HorizontalAlignment="Left" Margin="537,102,0,0" VerticalAlignment="Top" Width="161" Click="showBtn_Click_1" Height="43" Foreground="#FFFBF7F7" FontFamily="Gill Sans MT Condensed" FontSize="21.333" >
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="{DynamicResource Color1}" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="deleteBtn" Content="Ta Bort" HorizontalAlignment="Left" Margin="537,150,0,0" VerticalAlignment="Top" Width="161" Click="deleteBtn_Click_1" Height="43" Foreground="#FFF7F4F4" FontFamily="Gill Sans MT Condensed" FontSize="21.333">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="{DynamicResource Color1}" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="40,22,0,0" VerticalAlignment="Top" Width="202"/>
+        <Button x:Name="newToolBtn" Content="Lägg till ny vara" HorizontalAlignment="Left" Margin="40,434,0,0" VerticalAlignment="Top" Width="106" Click="newToolBtn_Click" Height="23" FontFamily="Gill Sans MT Condensed" FontSize="16" Foreground="#FF111010" Background="#FFFFFDFD" RenderTransformOrigin="-4.021,8.168"/>
+        <Button x:Name="showBtn" Content="Visa" HorizontalAlignment="Left" Margin="151,434,0,0" VerticalAlignment="Top" Width="106" Click="showBtn_Click_1" Height="23" Foreground="#FF080707" FontFamily="Gill Sans MT Condensed" FontSize="16" Background="#FFFDFDFD" />
+        <Button x:Name="deleteBtn" Content="Ta Bort" HorizontalAlignment="Left" Margin="263,434,0,0" VerticalAlignment="Top" Width="106" Click="deleteBtn_Click_1" Height="23" Foreground="#FF0F0F0F" FontFamily="Gill Sans MT Condensed" FontSize="16" Background="#FFFAFAFA"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="40,22,0,0" VerticalAlignment="Top" Width="202" Foreground="#FFF9F9F9"/>
 
     </Grid>
 </Window>

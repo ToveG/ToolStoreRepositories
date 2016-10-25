@@ -16,8 +16,6 @@ namespace ToolApplication.Service
         List<Tool> _toolList = new List<Tool>();
         List<Inventory> _inventoryList = new List<Inventory>();
 
-       
-
         public ToolService()
         {
             tool_rep = new ToolRepository(dbContext);

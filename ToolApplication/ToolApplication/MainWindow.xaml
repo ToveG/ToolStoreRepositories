@@ -6,28 +6,32 @@
         xmlns:local="clr-namespace:ToolApplication"
         xmlns:Entities="clr-namespace:ToolApplication.Domain.Entities;assembly=ToolApplication.Domain" x:Class="ToolApplication.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="420.477" ResizeMode="NoResize">
+        Title="MainWindow" Height="527.222" Width="388.81" ResizeMode="NoResize">
     <Window.Resources>
         <Color x:Key="Color1">#FF626060</Color>
     </Window.Resources>
-    <Grid Margin="0,0,6.222,1.444">
+    <Grid Margin="0,0,-5.889,1.222">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
         <Grid.DataContext>
             <Entities:DataContext/>
         </Grid.DataContext>
-        <Rectangle Fill="#FF363434" Height="490" Margin="0,0,0,-0.333" Stroke="Black" VerticalAlignment="Top"/>
-        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="376" Margin="40,53,0,0" VerticalAlignment="Top" Width="329">
+        <Rectangle Fill="#FF002948" Height="497" Stroke="Black" VerticalAlignment="Top" OpacityMask="White" Margin="0,0,0.111,0"/>
+        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="376" Margin="22,53,0,0" VerticalAlignment="Top" Width="329" Foreground="#FF050505" Background="White" OpacityMask="Black">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Varunr" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Varunr"  Width="50" DisplayMemberBinding="{Binding Id}"/>
                     <GridViewColumn Header="Produkt" Width="200" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Antal i lager" Width="76" DisplayMemberBinding="{Binding Stock}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="newToolBtn" Content="Lägg till ny vara" HorizontalAlignment="Left" Margin="40,434,0,0" VerticalAlignment="Top" Width="106" Click="newToolBtn_Click" Height="23" FontFamily="Gill Sans MT Condensed" FontSize="16" Foreground="#FF111010" Background="#FFFFFDFD" RenderTransformOrigin="-4.021,8.168"/>
-        <Button x:Name="showBtn" Content="Visa" HorizontalAlignment="Left" Margin="151,434,0,0" VerticalAlignment="Top" Width="106" Click="showBtn_Click_1" Height="23" Foreground="#FF080707" FontFamily="Gill Sans MT Condensed" FontSize="16" Background="#FFFDFDFD" />
-        <Button x:Name="deleteBtn" Content="Ta Bort" HorizontalAlignment="Left" Margin="263,434,0,0" VerticalAlignment="Top" Width="106" Click="deleteBtn_Click_1" Height="23" Foreground="#FF0F0F0F" FontFamily="Gill Sans MT Condensed" FontSize="16" Background="#FFFAFAFA"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="40,22,0,0" VerticalAlignment="Top" Width="202" Foreground="#FFF9F9F9"/>
+        <Button x:Name="newToolBtn" Content="Lägg till ny vara" HorizontalAlignment="Left" Margin="22,434,0,0" VerticalAlignment="Top" Width="106" Click="newToolBtn_Click" Height="46" FontFamily="Gill Sans MT Condensed" FontSize="16" Foreground="#FFFBF8F8" Background="#FF002948" RenderTransformOrigin="-4.021,8.168"/>
+        <Button x:Name="showBtn" Content="Visa" HorizontalAlignment="Left" Margin="133,434,0,0" VerticalAlignment="Top" Width="106" Click="showBtn_Click_1" Height="46" Foreground="#FFFBF6F6" FontFamily="Gill Sans MT Condensed" FontSize="16" Background="#FF002948" />
+        <Button x:Name="deleteBtn" Content="Ta Bort" HorizontalAlignment="Left" Margin="245,434,0,0" VerticalAlignment="Top" Width="106" Click="deleteBtn_Click_1" Height="46" Foreground="#FFF7F2F2" FontFamily="Gill Sans MT Condensed" FontSize="16" Background="#FF002948"/>
+        <Label x:Name="label" Content="Verktyg" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Gill Sans MT Condensed" FontSize="24" Height="38" Width="60"/>
 
     </Grid>
 </Window>

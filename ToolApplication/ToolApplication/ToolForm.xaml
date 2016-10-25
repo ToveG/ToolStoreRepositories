@@ -5,16 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToolApplication"
         mc:Ignorable="d"
-        Title="ToolForm" Height="360.302" Width="521.429">
-    <Grid Margin="0,0,-4.111,0.333">
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="303" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="500"/>
-        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="224" Margin="40,53,0,0" VerticalAlignment="Top" Width="331">
+        Title="ToolForm" Height="370.57" Width="523.077" ResizeMode="NoResize">
+    <Grid Margin="0,0,-22.111,-1.222" Background="#FF002948">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <!-- <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="303" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="500"/>-->
+        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="325" Margin="21,10,0,0" VerticalAlignment="Top" Width="482" Background="White" Foreground="Black">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Varunr" Width="50" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Produkt" Width="100" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Antal i lager" Width="70" DisplayMemberBinding="{Binding Price}"/>
-                    <GridViewColumn Width="40" >
+                    <GridViewColumn Header="Produkt" Width="300" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Antal i lager" Width="80" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Width="50" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button x:Name="showBtn" Click="showBtn_Click" CommandParameter="{Binding}">Visa</Button>

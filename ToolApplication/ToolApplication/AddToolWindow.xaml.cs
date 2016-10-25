@@ -138,5 +138,20 @@ namespace ToolApplication
             }
             return false;
         }
+
+        private void X_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Du försöker stänga utan att spara. Vill du avsluta?", "Tool Application", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    Close();
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
+        }
+
+    
     }
 }

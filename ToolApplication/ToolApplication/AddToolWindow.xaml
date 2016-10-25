@@ -26,7 +26,7 @@
         <RadioButton x:Name="toolRadio" Content="Verktyg" HorizontalAlignment="Left" Margin="31,30,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}" Foreground="#FFF7EFEF"/>
         <RadioButton x:Name="batteryRadio" Content="Batteriverktyg" HorizontalAlignment="Left" Margin="169,30,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}" Foreground="#FFF2EBEB"/>
         <RadioButton x:Name="powerRadio" Content="Strömverktyg" HorizontalAlignment="Left" Margin="311,30,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=CurrentOption, Mode=TwoWay}" RenderTransformOrigin="0.842,0.375" Foreground="#FFEFE6E6"/>
-        <TextBox x:Name="toolNameTxt" HorizontalAlignment="Left" Height="22" Margin="14,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="407" BorderBrush="#FFF5F7FF" Foreground="#FF181818"/>
+        <TextBox x:Name="toolNameTxt" HorizontalAlignment="Left" Height="22" Margin="14,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="407" BorderBrush="#FFF5F7FF" Foreground="#FF181818" />
         <TextBox x:Name="toolDescTxt" HorizontalAlignment="Left" Height="56" Margin="14,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="407" Foreground="#FF1C1C1C" BorderBrush="#FFFCFDFE"/>
         <TextBox x:Name="toolWeightTxt" HorizontalAlignment="Left" Height="23" Margin="15,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" SelectionBrush="#FF9FE6C8"/>
         <TextBox x:Name="productStockText" HorizontalAlignment="Left" Height="23" Margin="207,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" SelectionBrush="#FFCCF793"/>
@@ -53,11 +53,13 @@
           Foreground="Black" />
         <TextBox x:Name="toolBattTxt" HorizontalAlignment="Left" Height="23" Margin="14,389,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="187"
           Foreground="#FF0B0B0B" Visibility="{Binding IsChecked,ElementName=batteryRadio,Converter={StaticResource b2v}}" />
-        <TextBox x:Name="toolPriceTxt" HorizontalAlignment="Left" Height="25" Margin="15,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187"/>
-        <Button x:Name="add_btn" Content="Lägg till" HorizontalAlignment="Left" Margin="321,428,0,0" VerticalAlignment="Top" Width="100" Click="add_btn_Click" Height="35" Background="#FF002948" Foreground="#FFFBF9F9"/>
+        <TextBox x:Name="toolPriceTxt" HorizontalAlignment="Left" Height="25" Margin="15,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187"/>
+        <Button x:Name="add_btn" Content="Lägg till" HorizontalAlignment="Left" Margin="321,428,0,0" VerticalAlignment="Top" Width="100" Click="add_btn_Click" Height="35" Background="#FF002948" Foreground="#FFE4BF55" FontFamily="Global Monospace"/>
+        <Button x:Name="button" Content="X" HorizontalAlignment="Left" Margin="283,428,0,0" VerticalAlignment="Top" Width="33" Foreground="#FFE4BF55" Background="#FF002948" Height="35" RenderTransformOrigin="0.623,0.8" Click="X_Click" FontFamily="Global Monospace"/>
+
         <Label x:Name="label" Content="Produktnamn" HorizontalAlignment="Left" Margin="14,68,0,0" VerticalAlignment="Top" Foreground="#FFFCF8F8"/>
         <Label x:Name="label_Copy" Content="Produktbeskrivning" HorizontalAlignment="Left" Margin="14,121,0,0" VerticalAlignment="Top" Foreground="#FFFDF5F5"/>
-        <Label x:Name="label_Copy1" Content="Pris" HorizontalAlignment="Left" Margin="17,412,0,0" VerticalAlignment="Top" Foreground="#FFF6F0F0"/>
+        <Label x:Name="label_Copy1" Content="Pris" HorizontalAlignment="Left" Margin="17,403,0,0" VerticalAlignment="Top" Foreground="#FFF6F0F0"/>
         <Label x:Name="label_Copy2" Content="Vikt (kg)" HorizontalAlignment="Left" Margin="17,219,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5"/>
         <Label x:Name="label1" Content="Batteritid (h)" HorizontalAlignment="Left" Margin="15,364,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"
           Foreground="#FFFFFBFB" Visibility="{Binding IsChecked,ElementName=batteryRadio,Converter={StaticResource b2v}}" />

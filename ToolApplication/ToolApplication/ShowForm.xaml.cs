@@ -174,9 +174,17 @@ namespace ToolApplication
 
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(textChanged == true)
+            if (textChanged == true)
             {
-                MessageBox.Show("Du har osparad data.");
+             MessageBoxResult result = MessageBox.Show("Du har osparad data, är du säker på att du vill avsluta?", "Tool Application", MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        Close();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                }
             }
             else
             {

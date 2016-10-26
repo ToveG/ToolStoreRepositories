@@ -21,7 +21,6 @@ namespace ToolApplication
             }
             else throw new Exception();
         }
-        //göra test på?
 
         public decimal ValidateDecimal(string _decimal)
         {
@@ -31,7 +30,6 @@ namespace ToolApplication
             }
             else throw new Exception();
         }
-
 
         public bool ValidateToolType(ToolType toolType)
         {
@@ -60,7 +58,5 @@ namespace ToolApplication
             }
             else throw new Exception();
         }
-
-
     }
 }

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToolApplication"
         mc:Ignorable="d"
-        Title="ToolForm" Height="445.295" Width="559.89" ResizeMode="NoResize">
-    <Grid Margin="0,0,-6.222,-1.556" Background="#FF002948">
+        Title="ToolForm" Height="488.976" Width="559.89" ResizeMode="NoResize">
+    <Grid Margin="0,0,-6.222,-2" Background="#FF002948">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <!-- <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="303" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="500"/>-->
-        <ListView x:Name="toolListView" HorizontalAlignment="Left" Margin="44,10,0,26" Width="482" Background="White" Foreground="Black">
+        <ListView x:Name="toolListView" HorizontalAlignment="Left" Margin="41,40,0,62" Width="480" Background="White" Foreground="Black">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Varunr" Width="50" DisplayMemberBinding="{Binding Name}"/>
@@ -21,13 +21,15 @@
                     <GridViewColumn Width="50" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="showBtn" Click="showBtn_Click" CommandParameter="{Binding}">Visa</Button>
+                                <Button x:Name="showBtn" Foreground="Black" Background="White" Width="30" Click="showBtn_Click" CommandParameter="{Binding}">Visa</Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
+        <GroupBox x:Name="groupBox" Header="Liknande produkter" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" Foreground="#FFFBF9F9" Width="522" Height="418"/>
+        <GroupBox x:Name="groupBox1" Grid.Column="1" Header="GroupBox" HorizontalAlignment="Left" Height="100" Margin="128.111,473,-228.111,-111" VerticalAlignment="Top" Width="100"/>
 
 
     </Grid>

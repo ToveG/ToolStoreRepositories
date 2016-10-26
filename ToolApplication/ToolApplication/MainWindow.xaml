@@ -19,7 +19,7 @@
             <Entities:DataContext/>
         </Grid.DataContext>
         <Rectangle Fill="#FF002948" Height="497" Stroke="Black" VerticalAlignment="Top" OpacityMask="White" Margin="0,0,0.111,0"/>
-        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="376" Margin="22,53,0,0" VerticalAlignment="Top" Width="345" Foreground="#FF050505" Background="White" OpacityMask="Black">
+        <ListView x:Name="toolListView" HorizontalAlignment="Left" Height="376" Margin="22,48,0,0" VerticalAlignment="Top" Width="345" Foreground="#FF050505" Background="White" OpacityMask="Black">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Varunr"  Width="50" DisplayMemberBinding="{Binding Id}"/>
@@ -31,7 +31,7 @@
         <Button x:Name="newToolBtn" Content="Lägg till ny vara" HorizontalAlignment="Left" Margin="22,434,0,0" VerticalAlignment="Top" Width="172" Click="newToolBtn_Click" Height="46" FontFamily="Global Monospace" Foreground="#FFE4BF55" Background="#FF002948" RenderTransformOrigin="-4.021,8.168"/>
         <Button x:Name="showBtn" Content="Visa" HorizontalAlignment="Left" Margin="199,434,0,0" VerticalAlignment="Top" Width="85" Click="showBtn_Click_1" Height="46" Foreground="#FFE4BF55" FontFamily="Global Monospace" Background="#FF002948" />
         <Button x:Name="deleteBtn" Content="Ta Bort" HorizontalAlignment="Left" Margin="289,434,0,0" VerticalAlignment="Top" Width="78" Click="deleteBtn_Click_1" Height="46" Foreground="#FFE4BF55" FontFamily="Global Monospace" Background="#FF002948"/>
-        <Label x:Name="label" Content="Verktyg" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Gill Sans MT Condensed" FontSize="24" Height="38" Width="60"/>
+        <Label x:Name="label" Content="Verktyg" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Gill Sans MT Condensed" FontSize="21.333" Height="38" Width="60"/>
 
     </Grid>
 </Window>

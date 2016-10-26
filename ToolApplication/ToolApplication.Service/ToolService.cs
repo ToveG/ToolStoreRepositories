@@ -44,10 +44,6 @@ namespace ToolApplication.Service
             return _toolList;
         }
 
-        public void UpdateTool()
-        {
-
-        }
 
         public Tool AddTool(string name, string description, decimal weight, decimal price, ToolType t_Type, Inventory inventory, int stock, decimal battery, decimal cord)
         {
@@ -69,8 +65,17 @@ namespace ToolApplication.Service
 
         public List<Tool> Get_Tools()
         {
-            _toolList = tool_rep.GetTools();
-            return _toolList;
+            //behöver inte köra try här.
+            try
+            {
+                _toolList = tool_rep.GetTools();
+                return _toolList;
+            }
+            catch (Exception e)
+            {
+                throw e;
+                //throw new Exception();
+            }
         }
 
         public void DeleteTool(Tool tool)

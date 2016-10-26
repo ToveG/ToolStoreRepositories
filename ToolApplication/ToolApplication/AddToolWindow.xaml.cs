@@ -1,18 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ToolApplication.Service;
-using ToolApplication.Domain;
 using ToolApplication.Domain.Entities;
 
 namespace ToolApplication
@@ -37,8 +27,8 @@ namespace ToolApplication
         public AddToolWindow(ToolService t_service, MainWindow mw)
         {
             InitializeComponent();
-            this.tool_service = t_service;
-            this.mainWindow = mw;
+            tool_service = t_service;
+            mainWindow = mw;
             inventoryList = tool_service.GetInventories();
 
             foreach(var item in inventoryList.GroupBy(a => a.Ailes))
@@ -151,7 +141,5 @@ namespace ToolApplication
                     break;
             }
         }
-
-    
     }
 }

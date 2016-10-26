@@ -62,8 +62,6 @@ namespace ToolApplication.Domain.Repositories
             {
                 throw new Exception();
             }
-            
         }
-
-            }
+   }
 }

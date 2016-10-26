@@ -1,18 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ToolApplication.Domain.Entities;
 using ToolApplication.Service;
 
@@ -30,15 +18,21 @@ namespace ToolApplication
         {
             InitializeComponent();
             PopulateListview();
-            
         }
 
         private void PopulateListview()
         {
-            toolList = t_service.Get_Tools();
-            foreach (var t in toolList)
+            try
             {
-                toolListView.Items.Add(t);
+                toolList = t_service.Get_Tools();
+                foreach (var t in toolList)
+                {
+                    toolListView.Items.Add(t);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ett fel har uppstått vid hämtning av data. Försök igen senare.");
             }
         }
 

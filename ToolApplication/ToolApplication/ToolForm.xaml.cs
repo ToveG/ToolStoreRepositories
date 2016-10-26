@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ToolApplication.Domain.Entities;
 using ToolApplication.Service;
 
@@ -32,7 +22,6 @@ namespace ToolApplication
             {
                 toolListView.Items.Add(t);
             }
-
         }
 
         private void showBtn_Click(object sender, RoutedEventArgs e)
@@ -40,8 +29,6 @@ namespace ToolApplication
             Tool item = (Tool)(sender as Button).DataContext;
             ShowForm showForm = new ShowForm(item, t_service);
             showForm.ShowDialog();
-
         }
-
     }
 }

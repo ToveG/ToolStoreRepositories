@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ToolApplication.Domain.Entities;
 using ToolApplication.Service;
 
@@ -32,6 +24,7 @@ namespace ToolApplication
         decimal _cord;
         decimal _battery;
         bool textChanged;
+
         public ShowForm(Tool tool, ToolService t_service)
         {
             InitializeComponent();
@@ -44,11 +37,13 @@ namespace ToolApplication
 
         private void loadData()
         {
-            toolList = tService.Get_Tools();
-            foreach (var item in toolList.GroupBy(t => t.ToolType))
-            {
-                prod_type_cBox.Items.Add(item.Key);
-            }
+            //hämtar bara ut dom tooltypes som finns  i db.blir tokigt. samma med cat.
+                toolList = tService.Get_Tools();
+                foreach (var item in toolList.GroupBy(t => t.ToolType))
+                {
+                    prod_type_cBox.Items.Add(item.Key);
+                }
+
             List<Inventory> invList = tService.GetInventories();
 
             foreach (var item in invList.GroupBy(i => i.Category))
@@ -59,7 +54,6 @@ namespace ToolApplication
             {
                 prod_ailes_cBox.Items.Add(item.Key);
             }
-
 
             prod_name_txt.Text = _tool.Name;
             prod_dec_txt.Text = _tool.Description;

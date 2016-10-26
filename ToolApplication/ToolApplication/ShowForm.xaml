@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToolApplication"
         mc:Ignorable="d"
-        Title="ShowForm" Height="528.778" Width="484" ResizeMode="NoResize">
+        Title="ShowForm" Height="492.778" Width="451.111" ResizeMode="NoResize">
 
-    <Grid Margin="0,0,-6.444,-2.667">
-        <Rectangle Fill="#FF002948" HorizontalAlignment="Left" Height="501" Stroke="Black" VerticalAlignment="Top" Width="483" Margin="2,2,-0.778,-0.333" RenderTransformOrigin="0.5,0.5">
+    <Grid Margin="0,0,-6.222,-0.889">
+        <Rectangle Fill="#FF002948" HorizontalAlignment="Left" Height="498" Stroke="Black" VerticalAlignment="Top" Width="483" Margin="2,2,-1,-40.889" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,7 +18,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <GroupBox x:Name="groupBox" Header="Produktinfo" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" Height="439" Width="455" Foreground="#FFFCFAFA">
+        <GroupBox x:Name="groupBox" Header="Produktinfo" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" Height="439" Width="415" Foreground="#FFFCFAFA">
         </GroupBox>
         <Label x:Name="label" Content="Produktnamn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,41,0,0" Foreground="#FFFCFBFB"/>
         <Label x:Name="label_Copy" Content="Beskrivning" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,67,0,0" Foreground="#FFFCF7F7"/>
@@ -31,14 +31,14 @@
         <Label x:Name="label_Copy7" Content="Verktygstyp" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,238,0,0" Foreground="#FFFCF7F7"/>
         <Label x:Name="label_Copy8" Content="Hylla" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,320,0,0" Foreground="#FFFCF7F7" RenderTransformOrigin="1.33,-1.117"/>
         <Label x:Name="label_Copy9" Content="Gång" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,292,0,0" Foreground="#FFFCF7F7" RenderTransformOrigin="0.548,6.797"/>
-        <TextBox x:Name="prod_name_txt" HorizontalAlignment="Left" Height="23" Margin="116,45,0,0" TextWrapping="Wrap" Text="&#x9;&#x9;" VerticalAlignment="Top" Width="331" TextChanged="prod_name_txt_TextChanged" />
-        <TextBox x:Name="prod_cord_txt" HorizontalAlignment="Left" Height="23" Margin="116,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" TextChanged="prod_cord_txt_TextChanged"/>
-        <TextBox x:Name="prod_weight_txt"   HorizontalAlignment="Left" Height="23" Margin="116,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" TextChanged="prod_weight_txt_TextChanged"/>
-        <TextBox x:Name="prod_dec_txt" HorizontalAlignment="Left" Height="23" Margin="116,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" TextChanged="prod_dec_txt_TextChanged"/>
-        <TextBox x:Name="prod_price_txt" HorizontalAlignment="Left" Height="23" Margin="116,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" TextChanged="prod_price_txt_TextChanged"/>
-        <TextBox x:Name="prod_stock_txt" HorizontalAlignment="Left" Height="23" Margin="116,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" TextChanged="prod_stock_txt_TextChanged"/>
-        <TextBox x:Name="prod_battery_txt" HorizontalAlignment="Left" Height="23" Margin="116,157,0,0" TextWrapping="Wrap" Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" VerticalAlignment="Top" Width="331" TextChanged="prod_battery_txt_TextChanged"/>
-        <ComboBox x:Name="prod_type_cBox" HorizontalAlignment="Left" Margin="116,242,0,0" VerticalAlignment="Top" Width="331"
+        <TextBox x:Name="prod_name_txt" HorizontalAlignment="Left" Height="23" Margin="116,45,0,0" TextWrapping="Wrap" Text="&#x9;&#x9;" VerticalAlignment="Top" Width="288" TextChanged="prod_name_txt_TextChanged" />
+        <TextBox x:Name="prod_cord_txt" HorizontalAlignment="Left" Height="23" Margin="116,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" TextChanged="prod_cord_txt_TextChanged"/>
+        <TextBox x:Name="prod_weight_txt"   HorizontalAlignment="Left" Height="23" Margin="116,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" TextChanged="prod_weight_txt_TextChanged"/>
+        <TextBox x:Name="prod_dec_txt" HorizontalAlignment="Left" Height="23" Margin="116,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" TextChanged="prod_dec_txt_TextChanged"/>
+        <TextBox x:Name="prod_price_txt" HorizontalAlignment="Left" Height="23" Margin="116,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" TextChanged="prod_price_txt_TextChanged"/>
+        <TextBox x:Name="prod_stock_txt" HorizontalAlignment="Left" Height="23" Margin="116,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" TextChanged="prod_stock_txt_TextChanged"/>
+        <TextBox x:Name="prod_battery_txt" HorizontalAlignment="Left" Height="23" Margin="116,157,0,0" TextWrapping="Wrap" Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" VerticalAlignment="Top" Width="288" TextChanged="prod_battery_txt_TextChanged"/>
+        <ComboBox x:Name="prod_type_cBox" HorizontalAlignment="Left" Margin="116,242,0,0" VerticalAlignment="Top" Width="288"
                   ItemsSource="{Binding}" SelectionChanged="prod_type_cBox_SelectionChanged">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -47,7 +47,7 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <ComboBox x:Name="prod_ailes_cBox" HorizontalAlignment="Left" Margin="116,296,0,0" VerticalAlignment="Top" Width="331"
+        <ComboBox x:Name="prod_ailes_cBox" HorizontalAlignment="Left" Margin="116,296,0,0" VerticalAlignment="Top" Width="288"
                   ItemsSource="{Binding}" SelectionChanged="prod_ailes_cBox_SelectionChanged">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -56,7 +56,7 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <ComboBox x:Name="prod_cat_cBox" HorizontalAlignment="Left" Margin="116,269,0,0" VerticalAlignment="Top" Width="331"
+        <ComboBox x:Name="prod_cat_cBox" HorizontalAlignment="Left" Margin="116,269,0,0" VerticalAlignment="Top" Width="288"
                   ItemsSource="{Binding}" SelectionChanged="prod_cat_cBox_SelectionChanged">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -65,10 +65,10 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <TextBox x:Name="prod_shelf_txt" HorizontalAlignment="Left" Height="23" Margin="116,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" TextChanged="prod_shelf_txt_TextChanged"/>
-        <Button x:Name="show_simular_tools_btn" Content="Visa liknande varor" HorizontalAlignment="Left" Margin="116,351,0,0" VerticalAlignment="Top" Width="163" Height="35" Click="show_simular_tools_btn_Click" Background="#FF002948" Foreground="#FFE4BF55" FontFamily="Global Monospace" FontSize="10.667"/>
-        <Button x:Name="closeBtn" Content="X" HorizontalAlignment="Left" Margin="284,351,0,0" VerticalAlignment="Top" Width="39" Click="closeBtn_Click" Background="#FF002948" Foreground="#FFE4BF55" RenderTransformOrigin="1.435,0.369" Height="35" FontFamily="Global Monospace" FontSize="10.667"/>
-        <Button x:Name="saveBtn" Content="Spara ändringar" HorizontalAlignment="Left" Margin="328,351,0,0" VerticalAlignment="Top" Width="119" Click="saveBtn_Click" Background="#FF002948" Foreground="#FFE4BF55" Height="35" FontFamily="Global Monospace" FontSize="10.667"/>
+        <TextBox x:Name="prod_shelf_txt" HorizontalAlignment="Left" Height="23" Margin="116,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" TextChanged="prod_shelf_txt_TextChanged"/>
+        <Button x:Name="show_simular_tools_btn" Content="Visa liknande varor" HorizontalAlignment="Left" Margin="116,351,0,0" VerticalAlignment="Top" Width="129" Height="35" Click="show_simular_tools_btn_Click" Background="#FF002948" Foreground="#FFE4BF55" FontFamily="Global Monospace" FontSize="10.667"/>
+        <Button x:Name="closeBtn" Content="X" HorizontalAlignment="Left" Margin="250,351,0,0" VerticalAlignment="Top" Width="39" Click="closeBtn_Click" Background="#FF002948" Foreground="#FFE4BF55" RenderTransformOrigin="1.435,0.369" Height="35" FontFamily="Global Monospace" FontSize="10.667"/>
+        <Button x:Name="saveBtn" Content="Spara ändringar" HorizontalAlignment="Left" Margin="294,351,0,0" VerticalAlignment="Top" Width="110" Click="saveBtn_Click" Background="#FF002948" Foreground="#FFE4BF55" Height="35" FontFamily="Global Monospace" FontSize="10.667"/>
 
     </Grid>
 </Window>
